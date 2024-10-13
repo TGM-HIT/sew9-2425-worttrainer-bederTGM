@@ -1,5 +1,11 @@
-// Verwaltet das Speichern und Laden von Worttrainer-Daten.
-// Implementiert die SpeicherManager-Schnittstelle, um die Speicherstrategie austauschbar zu halten.
+
+/**
+ * Verwaltet das Speichern und Laden von Worttrainer-Daten.
+ * Implementiert die SpeicherManager-Schnittstelle, um die Speicherstrategie austauschbar zu halten.
+ * @version 12.10.2024
+ * @author Benjamin Eder
+ */
+
 public class DateiManager implements SpeicherManager {
 
 	// Speichert den aktuellen Zustand des Worttrainers.

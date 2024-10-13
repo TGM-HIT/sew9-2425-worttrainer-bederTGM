@@ -1,21 +1,28 @@
-// Repräsentiert ein Wort-Bild-Paar für den Trainer.
-// Enthält das zugehörige Wort und die URL des Bildes.
-public class WortBildPaar {
+import java.io.Serializable;
 
-	// Das zu erratende Wort.
+/**
+ * Klasse, die ein Wort-Bild-Paar repräsentiert.
+ * @version 12.10.2024
+ * @author Benjamin Eder
+ */
+
+public class WortBildPaar implements Serializable {
+
 	private String wort;
-
-	// URL des Bildes, das mit dem Wort assoziiert ist.
 	private String bildURL;
 
-	// Gibt das Wort dieses Wort-Bild-Paars zurück.
+	public WortBildPaar(String wort, String bildURL) {
+		this.wort = wort;
+		this.bildURL = bildURL;
+	}
+
+	// Gibt das Wort des Wort-Bild-Paars zurück.
 	public String getWort() {
-		return null; // Muss mit der Rückgabe des Wortes implementiert werden.
+		return wort;
 	}
 
-	// Gibt die Bild-URL dieses Wort-Bild-Paars zurück.
+	// Gibt die Bild-URL des Wort-Bild-Paars zurück.
 	public String getBildURL() {
-		return null; // Muss mit der Rückgabe der Bild-URL implementiert werden.
+		return bildURL;
 	}
-
 }

@@ -1,5 +1,10 @@
-// Controller-Klasse, die den Ablauf des Worttrainers steuert.
-// Verbindet die Benutzeroberfläche (GUI) mit der Logik des Worttrainers.
+/**
+ * Controller-Klasse, die den Ablauf des Worttrainers steuert.
+ * Verbindet die Benutzeroberfläche (GUI) mit der Logik des Worttrainers.
+ * @version 12.10.2024
+ * @author Benjamin Eder
+ */
+
 public class WortTrainerController {
 
 	// Instanz der GUI für die Benutzerinteraktion.

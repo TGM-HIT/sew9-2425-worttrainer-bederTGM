@@ -1,18 +1,21 @@
-// Validator-Klasse, die prüft, ob ein Wort-Bild-Paar gültig ist.
-// Validiert z.B. die URL und das Wortformat.
+import java.util.regex.Pattern;
+
+/**
+ * Klasse zur Validierung von Wort-Bild-Paaren.
+ * @version 12.10.2024
+ * @author Benjamin Eder
+ */
+
 public class WortBildPaarValidator {
 
-	// Das zu überprüfende Wort-Bild-Paar.
-	private WortBildPaar wortBildPaar;
-
-	// Überprüft, ob die gegebene URL gültig ist.
+	// Überprüft, ob die gegebene URL ein gültiges URL-Format hat.
 	public boolean validateURL(String url) {
-		return false; // URL-Validierung hier implementieren.
+		String regex = "^(http|https)://.*\\.(jpg|png)$"; // URL-Pattern für Bilder.
+		return Pattern.matches(regex, url);
 	}
 
-	// Überprüft, ob das gegebene Wort gültig ist (z.B. keine Sonderzeichen).
+	// Überprüft, ob das gegebene Wort gültig ist (z.B. keine Sonderzeichen, nur Buchstaben).
 	public boolean validateWord(String word) {
-		return false; // Wortvalidierung hier implementieren.
+		return word != null && word.matches("[a-zA-Z]+");
 	}
-
 }

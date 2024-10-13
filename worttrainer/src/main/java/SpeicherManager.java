@@ -1,5 +1,9 @@
-// Schnittstelle für das Speichermanagement.
-// Ermöglicht das flexible Austauschen der Speicherstrategie (z.B. Dateisystem, Datenbank, etc.).
+/**
+ * Speichermanager Interface
+ * @version 12.10.2024
+ * @author Benjamin Eder
+ */
+
 public interface SpeicherManager {
 
 	// Speichert den Zustand des Worttrainers.

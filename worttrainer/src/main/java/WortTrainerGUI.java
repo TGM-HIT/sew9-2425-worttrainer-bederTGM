@@ -1,5 +1,10 @@
-// GUI-Klasse zur Anzeige von Bildern, Eingabefeldern und Statistiken.
-// Verwaltet die Benutzeroberfläche des Worttrainers.
+/**
+ * GUI-Klasse zur Anzeige von Bildern, Eingabefeldern und Statistiken.
+ * Verwaltet die Benutzeroberfläche des Worttrainers.
+ * @version 12.10.2024
+ * @author Benjamin Eder
+ */
+
 public class WortTrainerGUI {
 
 	// Zeigt das Bild des aktuellen Wort-Bild-Paars an.

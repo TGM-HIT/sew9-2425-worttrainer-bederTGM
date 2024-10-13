@@ -1,17 +1,15 @@
-// Repräsentiert die Statistik der Worttrainer-Sitzung.
-// Zählt, wie oft richtig, falsch und insgesamt geraten wurde, und berechnet die Erfolgsrate.
+/**
+ * Repräsentiert die Statistik der Worttrainer-Sitzung.
+ * Zählt, wie oft richtig, falsch und insgesamt geraten wurde, und berechnet die Erfolgsrate.
+ * @version 12.10.2024
+ * @author Benjamin Eder
+ */
+
 public class Statistik {
 
-	// Anzahl der insgesamt durchgeführten Versuche.
 	private int insgesamt;
-
-	// Anzahl der richtig geratenen Wörter.
 	private int richtig;
-
-	// Anzahl der falsch geratenen Wörter.
 	private int falsch;
-
-	// Erfolgsrate in Prozent.
 	private double erfolgsRate;
 
 	// Erhöht den Zähler für richtig geratene Wörter.
