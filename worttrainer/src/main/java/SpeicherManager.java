@@ -12,4 +12,4 @@ public interface SpeicherManager {
 	// Lädt den gespeicherten Zustand des Worttrainers.
 	public abstract Worttrainer laden();
 
-};
+}

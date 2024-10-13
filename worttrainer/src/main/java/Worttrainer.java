@@ -54,6 +54,10 @@ public class Worttrainer implements Serializable {
 		return statistik;
 	}
 
+	public WortBildPaar getAktuellesPaar() {
+		return aktuellesPaar;
+	}
+
 	// Speichert den aktuellen Zustand des Worttrainers.
 	public void speichern() {
 		speicherManager.speichern(this);
@@ -64,4 +68,6 @@ public class Worttrainer implements Serializable {
 		Worttrainer trainer = speicherManager.laden();
 		return trainer != null ? trainer : new Worttrainer(List.of(), speicherManager);
 	}
+
+
 }

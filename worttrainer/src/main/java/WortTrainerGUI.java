@@ -1,3 +1,9 @@
+import javax.swing.*;
+import java.awt.*;
+import java.net.URL;
+import javax.imageio.ImageIO;
+import java.io.IOException;
+
 /**
  * GUI-Klasse zur Anzeige von Bildern, Eingabefeldern und Statistiken.
  * Verwaltet die Benutzeroberfläche des Worttrainers.
@@ -7,19 +13,36 @@
 
 public class WortTrainerGUI {
 
-	// Zeigt das Bild des aktuellen Wort-Bild-Paars an.
 	public void zeigeBild(String bildURL) {
-		// Logik zur Anzeige des Bildes in der GUI.
+		try {
+			// Lade das Bild von der URL
+			URL url = new URL(bildURL);
+			Image image = ImageIO.read(url);
+
+			// Erstelle ein ImageIcon
+			ImageIcon imageIcon = new ImageIcon(image);
+
+			// Zeige das Bild in einem Dialog
+			JOptionPane.showMessageDialog(null, imageIcon, "Worttrainer", JOptionPane.INFORMATION_MESSAGE);
+		} catch (IOException e) {
+			// Fehlerbehandlung, falls das Bild nicht geladen werden kann
+			JOptionPane.showMessageDialog(null, "Bild konnte nicht geladen werden: " + e.getMessage(), "Fehler", JOptionPane.ERROR_MESSAGE);
+		}
+		JOptionPane.showInputDialog(null, "Gib das Wort ein:", "Worttrainer", JOptionPane.QUESTION_MESSAGE);
 	}
 
-	// Zeigt ein Eingabefeld für die Benutzereingabe an und gibt die Eingabe zurück.
+
 	public String zeigeEingabeDialog() {
-		return null; // Eingabedialog anzeigen und Benutzereingabe zurückgeben.
+		// Zeigt ein Eingabefeld für das Wort an
+		return JOptionPane.showInputDialog(null, "Gib das Wort ein:", "Worttrainer", JOptionPane.QUESTION_MESSAGE);
 	}
 
-	// Zeigt die aktuelle Statistik in der GUI an.
 	public void zeigeStatistik(Statistik statistik) {
-		// Statistik anzeigen (z.B. Anzahl richtiger und falscher Antworten).
+		// Zeigt die aktuelle Statistik an
+		JOptionPane.showMessageDialog(null, "Statistik:\n" +
+				"Insgesamt: " + statistik.getInsgesamt() + "\n" +
+				"Richtig: " + statistik.getRichtig() + "\n" +
+				"Falsch: " + statistik.getFalsch() + "\n" +
+				"Erfolgsrate: " + statistik.getErfolgsRate() + "%", "Statistik", JOptionPane.INFORMATION_MESSAGE);
 	}
-
 }
