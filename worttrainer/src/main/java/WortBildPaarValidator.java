@@ -8,13 +8,19 @@ import java.util.regex.Pattern;
 
 public class WortBildPaarValidator {
 
-	// Überprüft, ob die gegebene URL ein gültiges URL-Format hat.
+	/**
+	 * Überprüft, ob die gegebene URL ein gültiges Bildformat hat.
+	 * @return url
+	 */
 	public boolean validateURL(String url) {
 		String regex = "^(http|https)://.*\\.(jpg|png)$"; // URL-Pattern für Bilder.
 		return Pattern.matches(regex, url);
 	}
 
-	// Überprüft, ob das gegebene Wort gültig ist (z.B. keine Sonderzeichen, nur Buchstaben).
+	/**
+	 * Überprüft, ob das gegebene Wort nur aus Buchstaben besteht.
+	 * @return word
+	 */
 	public boolean validateWord(String word) {
 		return word != null && word.matches("[a-zA-Z]+");
 	}

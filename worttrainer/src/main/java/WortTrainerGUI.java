@@ -19,7 +19,6 @@ public class WortTrainerGUI {
 			URL url = new URL(bildURL);
 			Image image = ImageIO.read(url);
 
-			// Erstelle ein ImageIcon
 			ImageIcon imageIcon = new ImageIcon(image);
 
 			// Zeige das Bild in einem Dialog
@@ -28,7 +27,6 @@ public class WortTrainerGUI {
 			// Fehlerbehandlung, falls das Bild nicht geladen werden kann
 			JOptionPane.showMessageDialog(null, "Bild konnte nicht geladen werden: " + e.getMessage(), "Fehler", JOptionPane.ERROR_MESSAGE);
 		}
-		JOptionPane.showInputDialog(null, "Gib das Wort ein:", "Worttrainer", JOptionPane.QUESTION_MESSAGE);
 	}
 
 
@@ -43,6 +41,6 @@ public class WortTrainerGUI {
 				"Insgesamt: " + statistik.getInsgesamt() + "\n" +
 				"Richtig: " + statistik.getRichtig() + "\n" +
 				"Falsch: " + statistik.getFalsch() + "\n" +
-				"Erfolgsrate: " + statistik.getErfolgsRate() + "%", "Statistik", JOptionPane.INFORMATION_MESSAGE);
+				"Erfolgsrate: " + statistik.berechneErfolgsrate() + "%", "Statistik", JOptionPane.INFORMATION_MESSAGE);
 	}
 }

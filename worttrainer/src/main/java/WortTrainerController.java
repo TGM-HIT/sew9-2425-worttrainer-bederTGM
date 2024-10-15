@@ -17,16 +17,16 @@ public class WortTrainerController {
 
 	public void startTrainer() {
 		while (true) {
-			// 1. Zufälliges Paar auswählen
+			// Zufälliges Paar auswählen
 			worttrainer.waehleZufaelligesPaar();
 
-			// 2. Zeige das Bild und frage nach der Eingabe
+			// Zeige das Bild und frage nach der Eingabe
 			String bildURL = worttrainer.getAktuellesPaar().getBildURL();
 			gui.zeigeBild(bildURL);
 
 			String eingabe = gui.zeigeEingabeDialog();
 
-			// 3. Überprüfe die Eingabe
+			// Überprüfe die Eingabe
 			if (eingabe == null || eingabe.isEmpty()) {
 				// Beenden, wenn die Eingabe leer ist
 				break;

@@ -29,29 +29,23 @@ public class Statistik implements Serializable {
 	// Berechnet die Erfolgsrate als Prozentzahl.
 	public double berechneErfolgsrate() {
 		if (insgesamt == 0) {
-			return 0; // Vermeidet Division durch 0.
+			erfolgsRate = 0;
+		} else {
+			erfolgsRate = (double) richtig / insgesamt * 100;
 		}
-		erfolgsRate = (double) richtig / insgesamt * 100;
 		return erfolgsRate;
 	}
 
-	// Gibt die Anzahl der insgesamt durchgeführten Versuche zurück.
 	public int getInsgesamt() {
 		return insgesamt;
 	}
 
-	// Gibt die Anzahl der richtig geratenen Wörter zurück.
 	public int getRichtig() {
 		return richtig;
 	}
 
-	// Gibt die Anzahl der falsch geratenen Wörter zurück.
 	public int getFalsch() {
 		return falsch;
-	}
-
-	public String getErfolgsRate() {
-		return String.valueOf(erfolgsRate);
 	}
 }
 

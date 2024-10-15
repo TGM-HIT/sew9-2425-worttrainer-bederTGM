@@ -8,16 +8,14 @@ import java.util.Random;
  * @author Benjamin Eder
  */
 
-public class Worttrainer implements Serializable {
+public class Worttrainer {
 
 	private List<WortBildPaar> wortBildPaare;
 	private WortBildPaar aktuellesPaar;
 	private Statistik statistik;
-	private SpeicherManager speicherManager;
 
-	public Worttrainer(List<WortBildPaar> wortBildPaare, SpeicherManager speicherManager) {
+	public Worttrainer(List<WortBildPaar> wortBildPaare) {
 		this.wortBildPaare = wortBildPaare;
-		this.speicherManager = speicherManager;
 		this.statistik = new Statistik();
 	}
 
@@ -49,7 +47,6 @@ public class Worttrainer implements Serializable {
 		}
 	}
 
-	// Gibt die aktuelle Statistik zurück.
 	public Statistik getStatistik() {
 		return statistik;
 	}
@@ -57,17 +54,5 @@ public class Worttrainer implements Serializable {
 	public WortBildPaar getAktuellesPaar() {
 		return aktuellesPaar;
 	}
-
-	// Speichert den aktuellen Zustand des Worttrainers.
-	public void speichern() {
-		speicherManager.speichern(this);
-	}
-
-	// Lädt den Zustand des Worttrainers.
-	public static Worttrainer laden(SpeicherManager speicherManager) {
-		Worttrainer trainer = speicherManager.laden();
-		return trainer != null ? trainer : new Worttrainer(List.of(), speicherManager);
-	}
-
-
 }
+
