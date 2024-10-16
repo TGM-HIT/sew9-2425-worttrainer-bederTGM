@@ -9,13 +9,21 @@ public class WortTrainerController {
 
 	private Worttrainer worttrainer;
 	private WortTrainerGUI gui;
+	private SpeicherManager speicher;
 
-	public WortTrainerController(Worttrainer worttrainer, WortTrainerGUI gui) {
+	public WortTrainerController(Worttrainer worttrainer, WortTrainerGUI gui, SpeicherManager speicher) {
 		this.worttrainer = worttrainer;
 		this.gui = gui;
+		this.speicher = speicher;
 	}
 
 	public void startTrainer() {
+		// Laden des vorherigen Zustands
+		Worttrainer geladenerTrainer = speicher.laden();
+		if (geladenerTrainer != null) {
+			worttrainer = geladenerTrainer;
+		}
+
 		while (true) {
 			// Zufälliges Paar auswählen
 			worttrainer.waehleZufaelligesPaar();
@@ -37,6 +45,7 @@ public class WortTrainerController {
 			if (korrekt) {
 				gui.zeigeStatistik(worttrainer.getStatistik());
 			}
+			speicher.speichern(worttrainer);
 		}
 	}
 }

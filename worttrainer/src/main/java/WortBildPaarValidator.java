@@ -16,12 +16,4 @@ public class WortBildPaarValidator {
 		String regex = "^(http|https)://.*\\.(jpg|png)$"; // URL-Pattern für Bilder.
 		return Pattern.matches(regex, url);
 	}
-
-	/**
-	 * Überprüft, ob das gegebene Wort nur aus Buchstaben besteht.
-	 * @return word
-	 */
-	public boolean validateWord(String word) {
-		return word != null && word.matches("[a-zA-Z]+");
-	}
 }

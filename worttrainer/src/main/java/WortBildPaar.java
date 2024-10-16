@@ -16,7 +16,11 @@ public class WortBildPaar implements Serializable {
 	 * @param wort Das Wort des Paares.
 	 * @param bildURL Die URL des Bildes des Paares.
 	 */
-	public WortBildPaar(String wort, String bildURL) {
+	public WortBildPaar(String wort, String bildURL) throws IllegalArgumentException {
+		WortBildPaarValidator validator = new WortBildPaarValidator();
+		if(!validator.validateURL(bildURL)){
+			throw new IllegalArgumentException();
+		}
 		this.wort = wort;
 		this.bildURL = bildURL;
 	}

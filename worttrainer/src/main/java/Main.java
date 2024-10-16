@@ -29,9 +29,8 @@ public class Main {
         paare.add(paar10);
 
         Worttrainer worttrainer = new Worttrainer(paare);
-
         WortTrainerGUI gui = new WortTrainerGUI();
-        WortTrainerController controller = new WortTrainerController(worttrainer, gui);
+        WortTrainerController controller = new WortTrainerController(worttrainer, gui, new DateiManager());
 
         controller.startTrainer();
     }

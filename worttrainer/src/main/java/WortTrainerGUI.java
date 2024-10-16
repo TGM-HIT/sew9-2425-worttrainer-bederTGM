@@ -18,14 +18,15 @@ public class WortTrainerGUI {
 			// Lade das Bild von der URL
 			URL url = new URL(bildURL);
 			Image image = ImageIO.read(url);
-
 			ImageIcon imageIcon = new ImageIcon(image);
 
 			// Zeige das Bild in einem Dialog
 			JOptionPane.showMessageDialog(null, imageIcon, "Worttrainer", JOptionPane.INFORMATION_MESSAGE);
 		} catch (IOException e) {
+
 			// Fehlerbehandlung, falls das Bild nicht geladen werden kann
 			JOptionPane.showMessageDialog(null, "Bild konnte nicht geladen werden: " + e.getMessage(), "Fehler", JOptionPane.ERROR_MESSAGE);
+
 		}
 	}
 

@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Random;
@@ -8,22 +9,16 @@ import java.util.Random;
  * @author Benjamin Eder
  */
 
-public class Worttrainer {
+public class Worttrainer implements Serializable {
 
 	private List<WortBildPaar> wortBildPaare;
 	private WortBildPaar aktuellesPaar;
 	private Statistik statistik;
+	private WortBildPaarValidator word;
 
 	public Worttrainer(List<WortBildPaar> wortBildPaare) {
 		this.wortBildPaare = wortBildPaare;
 		this.statistik = new Statistik();
-	}
-
-	// Wählt ein bestimmtes Wort-Bild-Paar basierend auf dem Index aus.
-	public void waehlePaar(int index) {
-		if (index >= 0 && index < wortBildPaare.size()) {
-			aktuellesPaar = wortBildPaare.get(index);
-		}
 	}
 
 	// Wählt ein zufälliges Wort-Bild-Paar aus der Liste.
@@ -45,7 +40,7 @@ public class Worttrainer {
 			statistik.erhoeheFalsch();
 			return false;
 		}
-	}
+    }
 
 	public Statistik getStatistik() {
 		return statistik;
