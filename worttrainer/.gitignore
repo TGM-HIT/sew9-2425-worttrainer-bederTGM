@@ -1,0 +1,8 @@
+# Ignoriere Gradle-spezifische Dateien
+.gradle/
+
+
+# Ignoriere den gesamten Build-Ordner
+build/
+
+
