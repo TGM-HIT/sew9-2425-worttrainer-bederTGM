@@ -1,8 +1,8 @@
 # Ignoriere Gradle-spezifische Dateien
-.gradle/
+worttrainer/.gradle/buildOutputCleanup/buildOutputCleanup.lock
 
 
 # Ignoriere den gesamten Build-Ordner
-build/
+worttrainer/build/
 
 
