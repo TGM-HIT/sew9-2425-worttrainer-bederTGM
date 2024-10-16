@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="WorttrainerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-10-16T13:17:28" hostname="MRPROPERENVY" time="0.047">
+  <properties/>
+  <testcase name="testWortBildPaar()" classname="WorttrainerTest" time="0.036"/>
+  <testcase name="testStatistik()" classname="WorttrainerTest" time="0.002"/>
+  <testcase name="testWortBildPaarValidator()" classname="WorttrainerTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
