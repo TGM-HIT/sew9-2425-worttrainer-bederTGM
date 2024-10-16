@@ -6,13 +6,14 @@ import java.io.*;
  * @author Benjamin Eder
  */
 
-// Verwaltet das Speichern und Laden von Worttrainer-Daten.
 public class DateiManager implements SpeicherManager {
 
-    // Pfad zur Datei, in der die Daten gespeichert werden.
     private static final String DATEIPFAD = "worttrainer.obj";
 
-    // Speichert den aktuellen Zustand des Worttrainers in einer Datei.
+    /**
+     * Speichert den übergebenen Worttrainer in einer Datei.
+     * @param trainer Der zu speichernde Worttrainer.
+     */
     public void speichern(Worttrainer trainer) {
         // Speichern-Logik hier implementieren.
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(DATEIPFAD))) {
@@ -24,7 +25,10 @@ public class DateiManager implements SpeicherManager {
         }
     }
 
-    // Lädt einen zuvor gespeicherten Worttrainer-Zustand aus der Datei.
+    /**
+     * Lädt einen Worttrainer aus einer Datei.
+     * @return Der geladene Worttrainer oder null, wenn kein Trainer geladen werden konnte.
+     */
     public Worttrainer laden() {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(DATEIPFAD))) {
             return (Worttrainer) ois.readObject();

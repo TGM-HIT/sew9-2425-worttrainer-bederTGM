@@ -13,6 +13,10 @@ import java.io.IOException;
 
 public class WortTrainerGUI {
 
+	/**
+	 * Zeigt ein Bild aus dem Internet in einem Dialog an.
+	 * @param bildURL
+	 */
 	public void zeigeBild(String bildURL) {
 		try {
 			// Lade das Bild von der URL
@@ -30,12 +34,18 @@ public class WortTrainerGUI {
 		}
 	}
 
-
+	/**
+	 * Zeigt ein Bild aus dem lokalen Dateisystem in einem Dialog an.
+	 */
 	public String zeigeEingabeDialog() {
 		// Zeigt ein Eingabefeld für das Wort an
 		return JOptionPane.showInputDialog(null, "Gib das Wort ein:", "Worttrainer", JOptionPane.QUESTION_MESSAGE);
 	}
 
+	/**
+	 * Zeigt eine Meldung mit dem Ergebnis der Eingabe an.
+	 * @param statistik
+	 */
 	public void zeigeStatistik(Statistik statistik) {
 		// Zeigt die aktuelle Statistik an
 		JOptionPane.showMessageDialog(null, "Statistik:\n" +

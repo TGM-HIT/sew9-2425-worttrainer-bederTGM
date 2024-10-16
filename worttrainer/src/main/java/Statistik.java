@@ -14,19 +14,26 @@ public class Statistik implements Serializable {
 	private int falsch = 0;
 	private double erfolgsRate;
 
-	// Erhöht den Zähler für richtig geratene Wörter und aktualisiert die Erfolgsrate.
+	/**
+	 * Erhöt den Zähler für richtig geratene Wörter und aktualisiert die Erfolgsrate.
+	 */
 	public void erhoeheRichtig() {
 		richtig++;
 		insgesamt++;
 	}
 
-	// Erhöht den Zähler für falsch geratene Wörter und aktualisiert die Erfolgsrate.
+	/**
+	 * Erhöt den Zähler für falsch geratene Wörter und aktualisiert die Erfolgsrate.
+	 */
 	public void erhoeheFalsch() {
 		falsch++;
 		insgesamt++;
 	}
 
-	// Berechnet die Erfolgsrate als Prozentzahl.
+	/**
+	 * Berechnet die Erfolgsrate anhand der Anzahl der richtigen und insgesamt geratenen Wörter.
+	 * @return Die Erfolgsrate in Prozent.
+	 */
 	public double berechneErfolgsrate() {
 		if (insgesamt == 0) {
 			erfolgsRate = 0;
@@ -36,14 +43,26 @@ public class Statistik implements Serializable {
 		return erfolgsRate;
 	}
 
+	/**
+	 * Gibt die Anzahl der insgesamt geratenen Wörter zurück.
+	 * @return Die Anzahl der insgesamt geratenen Wörter.
+	 */
 	public int getInsgesamt() {
 		return insgesamt;
 	}
 
+	/**
+	 * Gibt die Anzahl der richtig geratenen Wörter zurück.
+	 * @return Die Anzahl der richtig geratenen Wörter.
+	 */
 	public int getRichtig() {
 		return richtig;
 	}
 
+	/**
+	 * Gibt die Anzahl der falsch geratenen Wörter zurück.
+	 * @return Die Anzahl der falsch geratenen Wörter.
+	 */
 	public int getFalsch() {
 		return falsch;
 	}

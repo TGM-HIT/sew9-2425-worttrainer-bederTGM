@@ -11,12 +11,21 @@ public class WortTrainerController {
 	private WortTrainerGUI gui;
 	private SpeicherManager speicher;
 
+	/**
+	 * Erstellt einen neuen WortTrainerController.
+	 * @param worttrainer Der Worttrainer, der die Logik des Trainings enthält.
+	 * @param gui Die Benutzeroberfläche des Worttrainers.
+	 * @param speicher Der SpeicherManager, der das Laden und Speichern des Worttrainers übernimmt.
+	 */
 	public WortTrainerController(Worttrainer worttrainer, WortTrainerGUI gui, SpeicherManager speicher) {
 		this.worttrainer = worttrainer;
 		this.gui = gui;
 		this.speicher = speicher;
 	}
 
+	/**
+	 * Startet den Worttrainer und führt das Training durch.
+	 */
 	public void startTrainer() {
 		// Laden des vorherigen Zustands
 		Worttrainer geladenerTrainer = speicher.laden();

@@ -16,18 +16,27 @@ public class Worttrainer implements Serializable {
 	private Statistik statistik;
 	private WortBildPaarValidator word;
 
+	/**
+	 * Erstellt einen neuen Worttrainer mit einer Liste von Wort-Bild-Paaren.
+	 */
 	public Worttrainer(List<WortBildPaar> wortBildPaare) {
 		this.wortBildPaare = wortBildPaare;
 		this.statistik = new Statistik();
 	}
 
-	// Wählt ein zufälliges Wort-Bild-Paar aus der Liste.
+	/**
+	 * Erstellt einen neuen Worttrainer mit einer Liste von Wort-Bild-Paaren.
+	 */
 	public void waehleZufaelligesPaar() {
 		Random rand = new Random();
 		aktuellesPaar = wortBildPaare.get(rand.nextInt(wortBildPaare.size()));
 	}
 
-	// Überprüft, ob die Benutzereingabe mit dem Wort des aktuellen Paars übereinstimmt.
+	/**
+	 * Überprüft die Eingabe des Benutzers auf Korrektheit.
+	 * @param eingabe Die Eingabe des Benutzers.
+	 * @return true, wenn die Eingabe korrekt ist, sonst false.
+	 */
 	public boolean ueberpruefeEingabe(String eingabe) {
 		if (aktuellesPaar == null) {
 			return false;
@@ -42,10 +51,18 @@ public class Worttrainer implements Serializable {
 		}
     }
 
+	/**
+	 * Gibt die Statistik der aktuellen Trainingssitzung zurück.
+	 * @return Die Statistik der aktuellen Trainingssitzung.
+	 */
 	public Statistik getStatistik() {
 		return statistik;
 	}
 
+	/**
+	 * Gibt das aktuelle Wort-Bild-Paar zurück.
+	 * @return Das aktuelle Wort-Bild-Paar.
+	 */
 	public WortBildPaar getAktuellesPaar() {
 		return aktuellesPaar;
 	}
