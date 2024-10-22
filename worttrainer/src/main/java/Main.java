@@ -1,8 +1,17 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Startet den Worttrainer.
+ * @version 12.10.2024
+ * @author Benjamin Eder
+ */
 public class Main {
 
+    /**
+     * Startet den Worttrainer.
+     * @param args Kommandozeilenargumente.
+     */
     public static void main(String[] args) {
 
         WortBildPaar paar1 = new WortBildPaar("Hund", "https://img.freepik.com/vektoren-kostenlos/niedliche-hunde-cartoon-figur-stehend_1308-133833.jpg");
